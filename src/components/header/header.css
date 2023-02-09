@@ -1,0 +1,4 @@
+.nav-link > a:hover {
+  border-bottom: 3px solid #007bff;
+  text-decoration: none;
+}
