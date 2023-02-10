@@ -1,10 +1,10 @@
 import React from "react";
-import { PlusIcon } from "@heroicons/react/20/solid";
+import { PlusIcon, Cog8ToothIcon } from "@heroicons/react/20/solid";
 
 const Toolbar = () => {
   return (
-    <div className="relative flex h-16 items-center justify-between border-b border-gray-300">
-      <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
+    <div className="relative flex py-3 justify-between flex-wrap border-b border-gray-300">
+      <div className="flex flex-1 justify-between sm:items-stretch sm:justify-start ">
         <div className="relative ">
           <div className="flex">
             <button
@@ -29,7 +29,7 @@ const Toolbar = () => {
         </div>
       </div>
 
-      <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      <div className=" absulate inset-y-0 right-0 flex items-center py-3 md:py-0 lg:py-0">
         <div className=" sm:ml-6 sm:block">
           <div className="flex space-x-4">
             <button
@@ -42,6 +42,12 @@ const Toolbar = () => {
               />
               New Event Type
             </button>
+            <Cog8ToothIcon
+              className="h-5 w-5 hover:text-blue-700 mt-2 
+                      focus:text-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                      active:text-blue-800 active:shadow-lg active:text-black"
+              aria-hidden="true"
+            ></Cog8ToothIcon>
           </div>
         </div>
       </div>

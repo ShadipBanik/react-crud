@@ -9,10 +9,10 @@ function App() {
       <Header />
       <div className="container">
         <div className="pointer-events-auto relative  pb-4  sm:pb-0">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center">
+          <div className="lg:ml-32 px-2 sm:px-6 lg:px-6 py-4 flex flex-col sm:flex-row sm:items-center">
             <Search />
           </div>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="lg:ml-32 ml-0 lg:mr-6 md:mr-2   px-2 sm:px-6 lg:px-6 ">
             <Toolbar />
             <div className="content pt-4">
               <Card />

@@ -6,7 +6,7 @@ const Search = () => {
     setSearch(event.target.value);
   };
   return (
-    <div className="inline-flexpy-4 flex-col justify-center hover:text-gray-500">
+    <div className="inline-flex flex-col justify-center hover:text-gray-500">
       <div className="relative  w-full ">
         <input
           type="text"

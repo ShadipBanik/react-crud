@@ -1,35 +1,55 @@
 import "./header.css";
-import { PlusIcon } from "@heroicons/react/20/solid";
-export default function header() {
+import {
+  PlusIcon,
+  Bars3Icon,
+  ChevronDownIcon,
+} from "@heroicons/react/20/solid";
+import { useState } from "react";
+import Select from "./select.js/select";
+export default function Header() {
+  const [toggle, setToggle] = useState(false);
+
+  const toggleChange = () => {
+    if (toggle) {
+      setToggle(false);
+    } else {
+      setToggle(true);
+    }
+  };
+
   return (
     <div className="pb-0 bg-white shadow-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row sm:items-center">
-        <div className="min-w-0 flex-1 ">
-          <div>
-            <select className="text-2xl text-6">
-              <option defaultChecked>My Calendly</option>
-              <option value="">tab1</option>
-              <option value="">tab1</option>
-              <option value="">tab1</option>
-            </select>
-          </div>
+      <div className="lg:ml-32  justify-between  flex  px-2 sm:px-2 lg:px-6 py-4 sm:flex-row sm:items-center">
+        <div className=" ">
+          <Select
+            title="My Calendly"
+            icon={<ChevronDownIcon className="w-6 h-6" />}
+          />
         </div>
-        <div className="mr-8 flex lg:mt-0 lg:ml-4">
-          <span className="sm:ml-3">
-            <button
-              type="button"
-              className="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-3 text-base text-white font-bold  shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              <PlusIcon
-                className="-ml-1 mr-2 h-5 w-5 text-white "
-                aria-hidden="true"
-              />
-              Create
-            </button>
-          </span>
+        <div className="md:mr-8 lg:mt-0 lg:ml-4">
+          <button
+            type="button"
+            className=" hidden md:inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-3 text-base text-white font-bold  shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            <PlusIcon
+              className="-ml-1 mr-2 h-5 w-5 text-white "
+              aria-hidden="true"
+            />
+            Create
+          </button>
+          <button
+            type="button"
+            className="flex md:hidden text-black py-2 hover:text-blue-600"
+            onClick={toggleChange}
+          >
+            <Bars3Icon className="-ml-1 mr-2 h-5 w-5  " />
+          </button>
         </div>
       </div>
-      <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full block  flex-grow lg:flex lg:items-center lg:w-auto">
+      <div
+        className={`lg:ml-32  px-2 sm:px-6 lg:px-6 w-ful flex-grow lg:flex lg:items-center lg:w-auto sm:hidden  transition
+          duration-150 ease-in-out ${toggle ? "block" : "hidden"}`}
+      >
         <div className="nav-link text-sm lg:flex-grow">
           <a
             href="#responsive-header"
@@ -55,6 +75,18 @@ export default function header() {
           >
             Routing Forms
           </a>
+          <div className=" inline-block md:hidden py-4">
+            <button
+              type="button"
+              className=" flex items-center rounded-full bg-blue-600 hover:bg-blue-700 px-4 py-3 text-base text-white font-bold  shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              <PlusIcon
+                className="-ml-1 mr-2 h-5 w-5 text-white "
+                aria-hidden="true"
+              />
+              Create
+            </button>
+          </div>
         </div>
       </div>
     </div>
